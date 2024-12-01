@@ -1,4 +1,4 @@
-function aocd01p01(input: string) {
+function aocd01p02(input: string) {
   const list1: number[] = [];
   const list2: number[] = [];
 
@@ -12,21 +12,18 @@ function aocd01p01(input: string) {
   if (list1.length !== list2.length)
     throw new Error("Input lists should be of the same length.");
 
-  list1.sort();
-  list2.sort();
+  const similarities: number[] = [];
 
-  let sum = 0;
-
-  list1.forEach((v, idx) => {
-    sum += Math.abs(v - list2[idx]);
+  list1.forEach((e) => {
+    similarities.push(e * list2.filter((v) => v === e).length);
   });
 
-  return sum;
+  return similarities.reduce((prev, curr) => prev + curr, 0);
 }
 
 const file = Bun.file("./2024/01/input.txt");
 const text = await file.text();
 
-const sum = aocd01p01(text);
+const sum = aocd01p02(text);
 
 console.info(sum);
