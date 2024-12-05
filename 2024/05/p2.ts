@@ -19,10 +19,6 @@ function aocd05p02(text: string) {
   });
 
   const updates = splittedText[1];
-  // next we iterate over the updates
-  // check for the current entry if any
-  // of the previous entries are in the
-  // next values list
   updates.split("\n").forEach((update) => {
     let validUpdate = true;
     update.split(",").forEach((entry, i, arr) => {
