@@ -33,7 +33,7 @@ function exploreTrail(x: number, y: number, map: number[][], score: number) {
   return score;
 }
 
-function aocd010p02(text: string) {
+function aocd10p02(text: string) {
   const map = text
     .trim()
     .split("\n")
@@ -62,6 +62,6 @@ function aocd010p02(text: string) {
 const file = Bun.file("./2024/10/input.txt");
 const text = await file.text();
 
-const a = aocd010p02(text);
+const a = aocd10p02(text);
 
 console.info(a);

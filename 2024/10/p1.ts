@@ -43,7 +43,7 @@ function exploreTrail(
   return score;
 }
 
-function aocd010p01(text: string) {
+function aocd10p01(text: string) {
   const map = text
     .trim()
     .split("\n")
@@ -72,6 +72,6 @@ function aocd010p01(text: string) {
 const file = Bun.file("./2024/10/input.txt");
 const text = await file.text();
 
-const a = aocd010p01(text);
+const a = aocd10p01(text);
 
 console.info(a);
